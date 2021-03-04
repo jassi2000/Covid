@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+// import LineGraph from './components/chart';
+import Row from "./components/upperrow"
+import Country from "./components/countries"
+import Dashboard from "./components/Dashboard"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Covid-19 Global Trend</h1>
+      <Row/>
+      <Country/>
+      {/* <LineGraph/> */}
+       <Dashboard />
+
     </div>
   );
 }
