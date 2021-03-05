@@ -46,10 +46,11 @@ export default class LineGraph extends Component {
                                 drawBorder: true
                             },
                             ticks:{
-                                stepSize : 70000
+                                stepSize : 3
                             }
                         }],
                         yAxes: [{
+                            position:'right',
                             gridLines: {
                                 display: true,
                                 drawBorder: true

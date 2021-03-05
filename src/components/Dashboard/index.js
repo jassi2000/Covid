@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from "./Dashboard.module.css";
+import  "./Dashboard.module.css";
 import LineGraph from "../../components/chart"
 
 const api_url="https://api.covid19api.com/dayone/country/india"
@@ -33,9 +33,9 @@ export default class Dashboard extends Component {
     }        
     render() {
         return (
-            <div className={classes.container}>
+            <div className="Container">
                 <header>
-                    <h1>Spread Trends</h1>
+                    <h3>Spread Trends</h3>
                 </header>
                 <LineGraph value={"Total Active Cases"} data={this.state.Active} labels={this.state.Dates} border={"blue"}/>
                 <LineGraph value={"Total Confirmed Cases"} data={this.state.Confirmed} labels={this.state.Dates} border={"violet"}/>
