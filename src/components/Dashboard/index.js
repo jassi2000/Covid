@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
             Confirmed:[...prev.Confirmed,item.Confirmed],
             Recovered:[...prev.Recovered,item.Recovered],
             Deaths:[...prev.Deaths,item.Deaths],
-            Dates:[...prev.Dates,item.Dates]}))))}
+            Dates:[...prev.Dates,item.Date]}))))}
     }        
     render() {
         return (
@@ -37,12 +37,10 @@ export default class Dashboard extends Component {
                 <header>
                     <h1>Spread Trends</h1>
                 </header>
-                <div>
                 <LineGraph value={"Total Active Cases"} data={this.state.Active} labels={this.state.Dates} border={"blue"}/>
                 <LineGraph value={"Total Confirmed Cases"} data={this.state.Confirmed} labels={this.state.Dates} border={"violet"}/>
                 <LineGraph value={"Total Recovered Cases"} data={this.state.Recovered} labels={this.state.Dates} border={"green"}/>
                 <LineGraph value={"Total Deaths"} data={this.state.Deaths} labels={this.state.Dates} border={"red"}/>
-                </div>
             </div>
         )
     }

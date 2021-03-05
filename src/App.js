@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
       <h1>Covid-19 Global Trend</h1>
-      <Row/>
-      <Country/>
+      {/* <Row/>
+      <Country/> */}
       {/* <LineGraph/> */}
        <Dashboard />
 

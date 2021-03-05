@@ -8,8 +8,8 @@ export default class LineGraph extends Component {
      const myChartRef = this.chartRef.current.getContext("2d");
         // const {data,labels} = this.props;
         // console.log("Labels" + this.props.labels)
-     console.log("active" + this.props.data)
-         new Chart(myChartRef, {
+         console.log("active" + this.props.labels)
+         setTimeout(()=> new Chart(myChartRef, {
             type: "line",
             data: {
                 //Bring in data
@@ -25,8 +25,40 @@ export default class LineGraph extends Component {
             },
             options: {
                 //Customize chart options
+                responsive: true,
+                maintainAspectRatio: false,
+                layout: {
+                    padding: {
+                        top: 5,
+                        left: 15,
+                        right: 15,
+                        bottom: 15
+                    }},
+                    scales: {
+                        xAxes: [{
+                                type: 'time',
+                                time: {
+                                  unit: 'month'
+                                },
+                                // distribution: 'series'
+                            gridLines: {
+                                display: false,
+                                drawBorder: true
+                            },
+                            ticks:{
+                                stepSize : 70000
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: true,
+                                drawBorder: true
+                            }
+                        }]
+                    }
+
             }
-        });
+        }) ,1000);
     }
     render() {
         return (
