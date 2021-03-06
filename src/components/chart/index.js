@@ -51,6 +51,8 @@ export default class LineGraph extends Component {
                         }],
                         yAxes: [{
                             position:'right',
+                            ticks: { callback : function(value,index,array) 
+                                { return (value < 100000) ? value/1000 + 'K' : value/100000 + 'L'; } },
                             gridLines: {
                                 display: true,
                                 drawBorder: true

@@ -1,9 +1,9 @@
 import "./styles.css";
 import React from "react";
 import Table from "react-bootstrap/Table"
-// import Dashboard from "../Dashboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "../Dashboard";
+import Row from "../upperrow"
 const api_url = "https://api.covid19api.com/summary";
 
 export default class Country extends React.Component {
@@ -27,6 +27,7 @@ export default class Country extends React.Component {
   render() {
     return<div className="tableanddash"> 
     <div className="istable">
+    <Row/>
     <Table striped bordered hover>
   <thead>
     <tr>
@@ -49,6 +50,7 @@ export default class Country extends React.Component {
 </Table>
 </div>
 <div className="isDash">
+  <div className="blank"></div>
 <Dashboard/>
 </div>
 </div>

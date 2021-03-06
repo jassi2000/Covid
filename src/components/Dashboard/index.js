@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  "./Dashboard.module.css";
 import LineGraph from "../../components/chart"
+import ComboBox from "../../components/search"
 
 const api_url="https://api.covid19api.com/dayone/country/india"
 export default class Dashboard extends Component {
@@ -37,6 +38,7 @@ export default class Dashboard extends Component {
                 <header>
                     <h3>Spread Trends</h3>
                 </header>
+                <ComboBox/>
                 <LineGraph value={"Total Active Cases"} data={this.state.Active} labels={this.state.Dates} border={"blue"}/>
                 <LineGraph value={"Total Confirmed Cases"} data={this.state.Confirmed} labels={this.state.Dates} border={"violet"}/>
                 <LineGraph value={"Total Recovered Cases"} data={this.state.Recovered} labels={this.state.Dates} border={"green"}/>

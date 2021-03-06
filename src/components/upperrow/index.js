@@ -21,9 +21,9 @@ export default class Row extends React.Component {
   render() {
     return (
       <div className="Row">
-        <Upper hvalue={"Total Confirmed"} rvalue={this.state.res.TotalConfirmed}/>
-        <Upper  hvalue={"Total Deaths"} rvalue={this.state.res.TotalDeaths}/>
-        <Upper  hvalue={"Total Recovered"} rvalue={this.state.res.TotalRecovered}/>
+        <Upper color={"#0059ff"} hvalue={"Confirmed"} rvalue={this.state.res.TotalConfirmed}/>
+        <Upper  color={"red"} hvalue={"Deaths"} rvalue={this.state.res.TotalDeaths}/>
+        <Upper color={"green"} hvalue={"Recovered"} rvalue={this.state.res.TotalRecovered}/>
       </div>
     );
   }
