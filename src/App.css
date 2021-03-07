@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.h1head{
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.h1head span{
+color: crimson;
+}

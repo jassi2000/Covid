@@ -1,6 +1,7 @@
 import "./styles.css";
 import React from "react";
 import Table from "react-bootstrap/Table"
+import { Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "../Dashboard";
 import Row from "../upperrow"
@@ -12,8 +13,16 @@ export default class Country extends React.Component {
   {
     super(props);
     this.state={
-      result :[]
+      result :[],
+      currentPage: 1,
+      CountryPerPage: 40
     }
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(event) {
+    this.setState({
+      currentPage: Number(event.target.id)
+    });
   }
   async componentDidMount()
   {
@@ -25,6 +34,34 @@ export default class Country extends React.Component {
 
   }
   render() {
+    const { result, currentPage, CountryPerPage } = this.state;
+    const indexOfLastCountry = currentPage * CountryPerPage;
+    const indexOfFirstCountry = indexOfLastCountry - CountryPerPage;
+    const currentCountry = result.slice(indexOfFirstCountry, indexOfLastCountry);
+    const renderCountry = currentCountry.map((item,index)=>{
+    return <tr key={index}>
+      <td>{item.Country}</td>
+      <td>{item.TotalConfirmed}</td>
+      <td>{item.TotalRecovered}</td>
+      <td>{item.TotalDeaths}</td>
+    </tr>;
+    }
+    )
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(result.length / CountryPerPage); i++) {
+      pageNumbers.push(i);
+    }
+    const renderPageNumbers = pageNumbers.map(number => {
+      return (
+        <Button variant="danger" size="lg" style={{margin:20}}
+          key={number}
+          id={number}
+          onClick={this.handleClick}
+        >
+          {number}
+        </Button>
+      );
+    });
     return<div className="tableanddash"> 
     <div className="istable">
     <Row/>
@@ -38,38 +75,15 @@ export default class Country extends React.Component {
     </tr>
   </thead>
   <tbody>
-  {this.state.result.map(item => (
-    <tr>
-      <td>{item.Country}</td>
-      <td>{item.TotalConfirmed}</td>
-      <td>{item.TotalRecovered}</td>
-      <td>{item.TotalDeaths}</td>
-    </tr>
-    ))}
+  {renderCountry}
   </tbody>
 </Table>
+  {renderPageNumbers}
 </div>
 <div className="isDash">
   <div className="blank"></div>
 <Dashboard/>
 </div>
-</div>
-  //   return <div className="divTable">
-  //   <div className="headRow">
-  //      <div className="divCell" align="center">County</div>
-  //      <div  className="divCell">Total Confirmed</div>
-  //      <div  className="divCell">Total Recovered</div>
-  //      <div  className="divCell">Total Deaths</div>
-  //   </div>
-  
-  //  {this.state.result.map(item => (
-  //     <div className="divRow">
-  //      <div className="divCell">{item.Country}</div>
-  //      <div className="divCell">{item.TotalConfirmed}</div>
-  //      <div className="divCell">{item.TotalRecovered}</div>
-  //      <div className="divCell">{item.TotalDeaths}</div>
-  //      </div>
-  //      ))}
-  // </div>    
+</div>  
   }
 }

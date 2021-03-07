@@ -7,7 +7,7 @@ const api_url="https://api.covid19api.com/countries"
 
 export default class ComboBox extends React.Component {
   state = {
-    data : []
+     data : []
   }    
 
   async componentDidMount(){
@@ -17,6 +17,11 @@ export default class ComboBox extends React.Component {
       data:res
     })
   }
+   
+  // componentDidUpdate(){
+  //   let x = window.Autocomplete.value
+  //   console.log(x);
+  // }
   render(){
   return (
     <Autocomplete

@@ -7,7 +7,7 @@ import Country from "./components/countries"
 function App() {
   return (
     <div className="App">
-      <h1>Covid-19 Global Trend</h1>
+      <h1 className="h1head"> <span>Covid-19</span> Global Trend</h1>
       <Country/>
       {/* <LineGraph/> */}
        {/* <Dashboard /> */}
