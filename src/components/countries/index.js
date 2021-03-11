@@ -15,7 +15,7 @@ export default class Country extends React.Component {
     this.state={
       result :[],
       currentPage: 1,
-      CountryPerPage: 40
+      CountryPerPage: 40,
     }
     this.handleClick = this.handleClick.bind(this);
   }

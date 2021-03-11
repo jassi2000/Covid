@@ -9,8 +9,6 @@ function App() {
     <div className="App">
       <h1 className="h1head"> <span>Covid-19</span> Global Trend</h1>
       <Country/>
-      {/* <LineGraph/> */}
-       {/* <Dashboard /> */}
 
     </div>
   );
