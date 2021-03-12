@@ -41,40 +41,43 @@ export default class Dashboard extends Component {
         //     Deaths:[...prev.Deaths,item.Deaths],
         //     Dates:[...prev.Dates,item.Date]}))))}
       }
-     async  getevent()
-      {
-          this.setState({
-              Active:[],
-              Confirmed:[],
-              Deaths:[],
-              Recovered:[],
-              Dates:[]
-          })
-        const response2 = await fetch(this.state.api_for_country)
-        var data2= await response2.json()
+     async  getevent(value)
+      {if(value){
+
         this.setState({
-            data2:data2
+            api_for_country:"https://api.covid19api.com/dayone/country/"+value.Slug,
+            Active:[],
+            Confirmed:[],
+            Deaths:[],
+            Recovered:[],
+            Dates:[]
         })
-        console.log(this.state.api_for_country)
-        const array1 =[];
-        const array2 =[];
-        const array3 =[];
-        const array4 =[];
-        const array5 =[];
-        {this.state.data2.map((item,index)=>
-            (array1[index]=item.Active,
-            array2[index] = item.Deaths,
-            array3[index]= item.Confirmed,
-            array4[index]=item.Recovered,
-            array5[index] =item.Date))}
-            this.setState({
-                Active :array1,
-                Deaths:array2,
-                Confirmed:array3,
-                Recovered:array4,
-                Dates:array5
-            })
-            console.log(this.state.Active)
+      const response2 = await fetch("https://api.covid19api.com/dayone/country/"+value.Slug)
+      var data2= await response2.json()
+      this.setState({
+          data2:data2
+      })
+      console.log(this.state.api_for_country)
+      const array1 =[];
+      const array2 =[];
+      const array3 =[];
+      const array4 =[];
+      const array5 =[];
+      {this.state.data2.map((item,index)=>
+          (array1[index]=item.Active,
+          array2[index] = item.Deaths,
+          array3[index]= item.Confirmed,
+          array4[index]=item.Recovered,
+          array5[index] =item.Date))}
+          this.setState({
+              Active :array1,
+              Deaths:array2,
+              Confirmed:array3,
+              Recovered:array4,
+              Dates:array5
+          })
+          console.log(this.state.Active)
+      }
       }        
     render() {
         return (
@@ -88,7 +91,7 @@ export default class Dashboard extends Component {
                     options={this.state.Countryandslug}
                     getOptionLabel={(option) => option.Country}
                     // defaultValue={{this.state.data}.find(v => v.Country[0])}
-                    onChange={(event,value)=>(this.getevent(),this.setState({api_for_country:"https://api.covid19api.com/dayone/country/"+value.Slug}))}
+                    onChange={(event,value)=>{this.getevent(value)}}
                     renderInput={(params) => <TextField {...params} label="Country" variant="outlined" />}
                     />
                     {/* <LineGraphRow value={this.state.api_for_country}/> */}

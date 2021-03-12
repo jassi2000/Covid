@@ -57,11 +57,10 @@ export default class LineGraph extends Component {
                     }
 
             }
-        }),2000);
+        }),1000);
     }
     async  componentDidUpdate() {
      const myChartRef = this.chartRef.current.getContext("2d");
-            console.log(this.props.url)
          new Chart(myChartRef, {
             type: "line",
             data: {
