@@ -41,9 +41,10 @@ export default class Country extends React.Component {
     const renderCountry = currentCountry.map((item,index)=>{
     return <tr key={index}>
       <td>{item.Country}</td>
-      <td>{item.TotalConfirmed}</td>
-      <td>{item.TotalRecovered}</td>
-      <td>{item.TotalDeaths}</td>
+      <td><span className="text-blue">{item.TotalConfirmed}</span></td>
+      <td><span className="text-red">{item.TotalDeaths}</span></td>
+      <td><span className="text-green">{item.TotalRecovered}</span></td>
+
     </tr>;
     }
     )
@@ -53,7 +54,7 @@ export default class Country extends React.Component {
     }
     const renderPageNumbers = pageNumbers.map(number => {
       return (
-        <Button variant="danger" size="lg" style={{margin:20}}
+        <Button size="lg" style={{margin:20, backgroundColor:'#ec0b0b'}}
           key={number}
           id={number}
           onClick={this.handleClick}
@@ -65,13 +66,15 @@ export default class Country extends React.Component {
     return<div className="tableanddash"> 
     <div className="istable">
     <Row/>
+    <br></br>
+    <br></br>
     <Table striped bordered hover>
   <thead>
     <tr>
       <th>Country</th>
-      <th>Total Confirmed</th>
-      <th>Total Recovered</th>
-      <th>Total Deaths</th>
+      <th><span className="text-red"> Total</span> Confirmed</th>
+      <th><span className="text-red">Total</span> Deaths</th>
+      <th><span className="text-red">Total</span> Recovered</th>
     </tr>
   </thead>
   <tbody>

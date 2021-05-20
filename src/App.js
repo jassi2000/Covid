@@ -7,9 +7,11 @@ import Country from "./components/countries"
 function App() {
   return (
     <div className="App">
-      <h1 className="h1head"> <span>Covid-19</span> Global Trend</h1>
-      <Country/>
+      <div className="whole-app-wrapper">
 
+      <h1 className="h1head"> <span className="text-red">Covid-19</span> Global Trend</h1>
+      <Country/>
+      </div>
     </div>
   );
 }

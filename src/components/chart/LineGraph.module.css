@@ -1,16 +1,46 @@
+@media (min-width:1150px) {
 .graphContainer {
     width: 100% ;
     height: 50vh;
     background: white;
-    padding: 30px 20px 10px 20px;
-    border-radius: 10px;
-        /* -webkit-box-shadow: 0px 10px 0px -5px rgba(0,0,0,0.3);
-        -moz-box-shadow: 0px 10px 0px -5px rgba(0,0,0,0.3);
-        box-shadow: 0px 10px 0px -5px rgba(0,0,0,0.3); */
+    padding: 30px 5px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.1s;
+}
+.graphContainer:hover{
+    border: 2px solid black;
+}
+}
+@media  (min-width:767px) and (max-width: 1150px) {
+    .graphContainer {
+        width: 100% ;
+        height: 50vh;
+        background: white;
+        padding: 30px 5px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.1s;
+    }
+    .graphContainer:hover{
+        border: 2px solid black;
+    }
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width:767px) {
     .graphContainer {
-        width: 80vw;
+        width: 100% ;
+        height: 38vh;
+        background: white;
+        padding: 30px 5px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        transition: 0.1s;
+    }
+    .graphContainer:hover{
+        border: 2px solid black;
+    }
+    canvas#myChart {
+        height: 35vh !important;
     }
 }

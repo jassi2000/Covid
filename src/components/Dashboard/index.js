@@ -73,7 +73,7 @@ export default class Dashboard extends Component {
               Active :array1,
               Deaths:array2,
               Confirmed:array3,
-              Recovered:array4,
+              Recovered:array4, 
               Dates:array5
           })
           console.log(this.state.Active)
@@ -83,21 +83,26 @@ export default class Dashboard extends Component {
         return (
             <div className="Container">
                 <header>
-                    <h3>Spread Trends</h3>
+                    <h3><span className="text-red">Spread</span> Trends</h3>
+                    <br></br>
                 </header>
                 {/* <ComboBox/> */}
                 <Autocomplete
                     id="combo-box-demo"
                     options={this.state.Countryandslug}
                     getOptionLabel={(option) => option.Country}
-                    // defaultValue={{this.state.data}.find(v => v.Country[0])}
+                    // defaultValue={options[0].Country}
                     onChange={(event,value)=>{this.getevent(value)}}
                     renderInput={(params) => <TextField {...params} label="Country" variant="outlined" />}
                     />
                     {/* <LineGraphRow value={this.state.api_for_country}/> */}
+                    <br></br>
                 <LineGraph url = {this.state.api_for_country} value={"Total Active Cases"} data={this.state.Active} labels={this.state.Dates} border={"blue"}/>
+                <br></br>
                 <LineGraph url = {this.state.api_for_country} value={"Total Confirmed Cases"} data={this.state.Confirmed} labels={this.state.Dates} border={"violet"}/>
+                <br></br>
                 <LineGraph url = {this.state.api_for_country} value={"Total Recovered Cases"} data={this.state.Recovered} labels={this.state.Dates} border={"green"}/>
+                <br></br>
                 <LineGraph url = {this.state.api_for_country} value={"Total Deaths"} data={this.state.Deaths} labels={this.state.Dates} border={"red"}/>
             </div>
         )

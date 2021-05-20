@@ -1,12 +1,78 @@
+@media (min-width:767px) {
 .Upper {
     width: 30%;
-    height: 150px;
+    height: 140px;
     margin: 2%;
-    padding: 2%;
+    padding: 4%;
     border-radius: 40px;
+    transition: 0.25s;
+    background: #f4fcff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .Upper:hover{
-    background-color: gainsboro;
+  .Upper:first-child:hover{
+    width: 32%;
+    height: 150px;
+    background-color: rgb(170, 228, 255);
+    font-size: 30px;
   }
-  
+  .Upper:nth-child(2):hover{
+    width: 32%;
+    height: 150px;
+    background-color: rgb(255, 219, 219);
+    font-size: 30px;
+  }
+  .Upper:last-child:hover{
+    width: 32%;
+    height: 150px;
+    background-color: rgb(229, 255, 217);
+    font-size: 30px;
+  }
+}
+
+@media (max-width:767px) {
+  .Upper {
+    width: 30%;
+    height: 100px;
+    margin: 2%;
+    padding: 4%;
+    border-radius: 10px;
+    transition: 0.25s;
+    background: #f4fcff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+
+  .Upper:first-child:hover{
+    width: 31%;
+    height: 110px;
+    background-color: rgb(170, 228, 255);
+    font-size: 30px;
+  }
+  .Upper:nth-child(2):hover{
+    width: 32%;
+    height: 110px;
+    background-color: rgb(255, 219, 219);
+    font-size: 30px;
+  }
+  .Upper:last-child:hover{
+    width: 32%;
+    height: 110px;
+    background-color: rgb(229, 255, 217);
+    font-size: 30px;
+  }
+  .Upper h5{
+    font-size: 16px !important;
+  }
+  .Upper h4{
+    font-size: 18px !important;
+  }
+  .btn.btn-primary{
+    margin:3vw !important;
+  }
+  .istable{
+    width: 98%;
+    margin:1%;
+  }
+
+}

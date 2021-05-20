@@ -1,5 +1,6 @@
 {
   "name": "minor",
+  "homepage" :"http://themarketnest.com/projects/S.M.A.R.T/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
