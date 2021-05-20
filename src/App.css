@@ -1,5 +1,7 @@
+h1.h1head{
+  color: black;
+}
 @media (min-width:767px) {
-  
 .App {
   text-align: center;
   width: 100%;
